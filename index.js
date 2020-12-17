@@ -60,8 +60,7 @@ class Airplane {
       return `${this.name}, ${this.age}`;
     }
   }
-  
-  
+
   /*
     TASK 2
       - Write a Car class whose constructor initializes `model` and `milesPerGallon` from arguments.
@@ -122,9 +121,9 @@ class Airplane {
   */
  class Lambdasian {
     constructor(obj){
-      this.name = obj.pname;
-      this.age = obj.page;
-      this.location = obj.plocation;
+      this.name = obj.name;
+      this.age = obj.age;
+      this.location = obj.location;
     }
     speak(){
       return `Hello my name is ${this.name}, I am from ${this.location}.`

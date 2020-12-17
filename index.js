@@ -7,6 +7,7 @@
         + If a plane takes off, its `isFlying` property gets set to true.
         + If a plane lands, its `isFlying` property gets set to false.
 */
+//just prep
 
 // EXAMPLE SOLUTION CODE:
 class Airplane {

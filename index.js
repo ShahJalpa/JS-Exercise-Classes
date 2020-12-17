@@ -49,16 +49,12 @@ class Airplane {
       this.stomach = [];
     }
     eat(str){
-      if(this.stomach.length<=10){
+      if(this.stomach.length<10){
         this.stomach.push(str);
       }
-      else
-      console.log("You eat too much, you need to do poop now.");
     }
     poop(){
-      //if (this.stomach.length>10){
       this.stomach=[];
-      //}
     }
     toString(){
       return `${this.name}, ${this.age}`;

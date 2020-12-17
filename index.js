@@ -43,15 +43,35 @@ class Airplane {
   */
   
  class Person {
-    
+    constructor(pname, page){
+      this.name = pname;
+      this.age = page;
+      this.stomach = [];
+    }
+    eat(str){
+      if(this.stomach.length<=10){
+        this.stomach.push(str);
+      }
+      else
+      console.log("You eat too much, you need to do poop now.");
+    }
+    poop(){
+      //if (this.stomach.length>10){
+      this.stomach=[];
+      //}
+    }
+    toString(){
+      return `${this.name}, ${this.age}`;
+    }
   }
+  
   
   /*
     TASK 2
       - Write a Car class whose constructor initializes `model` and `milesPerGallon` from arguments.
       - All instances built with Car:
           + should initialize with a `tank` at 0
-          + should initialize with an `odometer` at 0
+     3     + should initialize with an `odometer` at 0
       - Give cars the ability to get fueled with a `.fill(gallons)` method. Add the gallons to `tank`.
       - Give cars ability to `.drive(distance)`. The distance driven:
           + Should cause the `odometer` to go up.
@@ -61,8 +81,36 @@ class Airplane {
   */
   
  class Car {
-    
-  }
+    constructor(pmodel, pmilesPerGallon){
+      this.model = pmodel;
+      this.milesPerGallon = pmilesPerGallon;
+      this.tank = 0;
+      this.odometer = 0;
+    }
+    fill(gallons){
+      this.tank = this.tank + gallons;
+    }
+    drive(distance){
+      //this.odometer+= distance;
+      let maxDroveMiles = this.tank *this.milesPerGallon;
+      if(distance > maxDroveMiles){
+        this.odometer += maxDroveMiles;
+        this.tank = 0;
+        return `I ran out of fuel at ${this.odometer} miles!`;
+      }
+      else{
+        this.odometer += distance;
+        this.tank = this.odometer / this.milesPerGallon;
+      }
+    }
+      //let droveMiles = maxDroveMiles - distance;
+      //for example if my cars avg is 20 miles per gallan and I have 30 gallons fuel in my tank.
+      //so i can drive = (30 * 20 = 600) miles. now if I drove 100 miles(distance) it will be 600 - 100 = 500.
+
+      //let usedTank = droveMiles/this.milesPerGallon;
+      //if 20 miles = 1 gallon then 500 miles = ? gallons
+      
+ }    
   
   /*
     TASK 3
@@ -77,7 +125,14 @@ class Airplane {
           + {name} and {location} of course come from the instance's own properties.
   */
  class Lambdasian {
-    
+    constructor(obj){
+      this.name = obj.pname;
+      this.age = obj.page;
+      this.location = obj.plocation;
+    }
+    speak(){
+      return `Hello my name is ${this.name}, I am from ${this.location}.`
+    }
   }
   
   /*
@@ -94,8 +149,8 @@ class Airplane {
           + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
           + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
   */
- class Instructor {
-
+ class Instructor extends Lambdasian {
+    
  }
   /*
     TASK 5

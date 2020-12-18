@@ -183,10 +183,13 @@ class Airplane {
        this.favSubjects = obj.favSubjects;
      }
      listSubjects(subjects){
-       return `Loving ${this.subject}!`
+       return `Loving ${this.favSubjects.join(", ")}!`
      }
      PRAssignment(subject){
-       return `${student.name} has submitted a PR for ${subject}`
+       return `${this.name} has submitted a PR for ${subject}`
+     }
+     sprintChallenge(subject){
+       return `${this.name} has begun sprint challenge on ${subject}`
      }
  }
   
